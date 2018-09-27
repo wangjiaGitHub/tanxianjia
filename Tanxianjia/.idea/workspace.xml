@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6bd5b0be-b32a-46f8-87a8-55c11e89b7c2" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="tanxianjiaCase.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/testCase/tanxianjiaCase.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+              <folding>
+                <element signature="e#41#56#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>23.81</find>
+      <find>探险</find>
+      <find>runTest</find>
+      <find>_testFunc</find>
+      <find>run</find>
+      <find>HTMLTestRunner</find>
+      <find>TestCase</find>
+    </findStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/package1/requestsTest.py" />
+        <option value="$PROJECT_DIR$/package1/requestsSearch.py" />
+        <option value="$PROJECT_DIR$/package1/dsfsadhjf.py" />
+        <option value="$PROJECT_DIR$/config/__init__.py" />
+        <option value="$PROJECT_DIR$/testCase/__init__.py" />
+        <option value="$PROJECT_DIR$/testCase/requestsSearch.py" />
+        <option value="$PROJECT_DIR$/report/jjj.py" />
+        <option value="$PROJECT_DIR$/config/conf.py" />
+        <option value="$PROJECT_DIR$/config/mathfunc.py" />
+        <option value="$PROJECT_DIR$/testCase/unittestTest.py" />
+        <option value="$PROJECT_DIR$/testCase/testsuite.py" />
+        <option value="$PROJECT_DIR$/testCase/errr.py" />
+        <option value="$PROJECT_DIR$/config/getPerGameLog.py" />
+        <option value="$PROJECT_DIR$/testCase/qqq.py" />
+        <option value="$PROJECT_DIR$/testing.py" />
+        <option value="$PROJECT_DIR$/config/mongoDB.py" />
+        <option value="$PROJECT_DIR$/HTMLTestReportCN.py" />
+        <option value="$PROJECT_DIR$/report/探险英雄20180926091659.html" />
+        <option value="$PROJECT_DIR$/report/探险英雄20180926091409.html" />
+        <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/testCase/tanxianjiaCase.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="61" />
+    <option name="width" value="1905" />
+    <option name="height" value="965" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Tanxianjia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tanxianjia" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tanxianjia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tanxianjia" type="462c0819:PsiDirectoryNode" />
+              <item name="testCase" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../autoTest2" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\allCodes\pythonCode\Tanxianjia\testCase" />
+      <recent name="E:\allCodes\pythonCode\Tanxianjia" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.run">
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Tanxianjia" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="tanxianjiaCase" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Tanxianjia" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testCase/tanxianjiaCase.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="Unittests for tanxianjiaCase.TanxianjiaTest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Tanxianjia" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tanxianjiaCase.TanxianjiaTest&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
+    <configuration name="Unittests for tanxianjiaCase.TanxianjiaTest.test_Search" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Tanxianjia" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;tanxianjiaCase.TanxianjiaTest.test_Search&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+    </configuration>
+    <configuration name="Unittests in tanxianjiaCase.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="Tanxianjia" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testCase" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/testCase/tanxianjiaCase.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+    </configuration>
+    <list>
+      <item itemvalue="Python tests.Unittests in tanxianjiaCase.py" />
+      <item itemvalue="Python tests.Unittests for tanxianjiaCase.TanxianjiaTest.test_Search" />
+      <item itemvalue="Python.run" />
+      <item itemvalue="Python tests.Unittests for tanxianjiaCase.TanxianjiaTest" />
+      <item itemvalue="Python.tanxianjiaCase" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.tanxianjiaCase" />
+        <item itemvalue="Python tests.Unittests for tanxianjiaCase.TanxianjiaTest" />
+        <item itemvalue="Python tests.Unittests for tanxianjiaCase.TanxianjiaTest.test_Search" />
+        <item itemvalue="Python tests.Unittests in tanxianjiaCase.py" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6bd5b0be-b32a-46f8-87a8-55c11e89b7c2" name="Default" comment="" />
+      <created>1537335419763</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1537335419763</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Unittests_for_tanxianjiaCase_TanxianjiaTest_test_Search - 2018.09.25 at 14h 49m 28s.xml">
+      <configuration name="Unittests for tanxianjiaCase.TanxianjiaTest.test_Search" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_tanxianjiaCase_py - 2018.09.25 at 15h 09m 51s.xml">
+      <configuration name="Unittests in tanxianjiaCase.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tanxianjiaCase_TanxianjiaTest_test_Search - 2018.09.25 at 15h 11m 12s.xml">
+      <configuration name="Unittests for tanxianjiaCase.TanxianjiaTest.test_Search" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tanxianjiaCase_TanxianjiaTest_test_Search - 2018.09.25 at 15h 20m 20s.xml">
+      <configuration name="Unittests for tanxianjiaCase.TanxianjiaTest.test_Search" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tanxianjiaCase_TanxianjiaTest_test_Search - 2018.09.25 at 17h 03m 01s.xml">
+      <configuration name="Unittests for tanxianjiaCase.TanxianjiaTest.test_Search" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tanxianjiaCase_TanxianjiaTest_test_Search - 2018.09.25 at 17h 03m 38s.xml">
+      <configuration name="Unittests for tanxianjiaCase.TanxianjiaTest.test_Search" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tanxianjiaCase_TanxianjiaTest_test_Search - 2018.09.25 at 18h 12m 38s.xml">
+      <configuration name="Unittests for tanxianjiaCase.TanxianjiaTest.test_Search" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tanxianjiaCase_TanxianjiaTest_test_Search - 2018.09.25 at 18h 17m 35s.xml">
+      <configuration name="Unittests for tanxianjiaCase.TanxianjiaTest.test_Search" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tanxianjiaCase_TanxianjiaTest_test_Search - 2018.09.25 at 18h 19m 10s.xml">
+      <configuration name="Unittests for tanxianjiaCase.TanxianjiaTest.test_Search" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_for_tanxianjiaCase_TanxianjiaTest - 2018.09.26 at 09h 55m 10s.xml">
+      <configuration name="Unittests for tanxianjiaCase.TanxianjiaTest" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17317708" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3613793" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Mongo Explorer" order="3" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/testCase/tanxianjiaCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" selection-start-line="6" selection-end-line="8" selection-end-column="30" />
+          <folding>
+            <element signature="e#41#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTMLTestReportCN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22950">
+          <caret line="765" column="27" lean-forward="true" selection-start-line="765" selection-start-column="27" selection-end-line="765" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="8" column="26" lean-forward="true" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCase/tanxianjiaCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1530">
+          <caret line="51" column="57" lean-forward="true" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/mongoDB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCase/tanxianjiaCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/getPerGameLog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/mongoDB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCase/tanxianjiaCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="29" column="28" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24270">
+          <caret line="809" column="4" lean-forward="true" selection-start-line="809" selection-start-column="4" selection-end-line="809" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCase/tanxianjiaCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package1/__init__.py" />
+    <entry file="file://C:/Python27/Lib/site-packages/requests/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-311">
+          <caret line="100" column="16" selection-start-line="100" selection-start-column="14" selection-end-line="100" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package1/dsfsadhjf.py" />
+    <entry file="file://$PROJECT_DIR$/testCase/requestsSearch.py" />
+    <entry file="file://$PROJECT_DIR$/testCase/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/jjj.py" />
+    <entry file="file://$PROJECT_DIR$/config/mathfunc.py" />
+    <entry file="file://C:/Python27/Lib/unittest/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5896">
+          <caret line="235" selection-start-line="235" selection-end-line="235" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCase/unittestTest.py" />
+    <entry file="file://$PROJECT_DIR$/testCase/testsuite.py" />
+    <entry file="file://$PROJECT_DIR$/testCase/errr.py" />
+    <entry file="file://$PROJECT_DIR$/testCase/qqq.py" />
+    <entry file="file://$PROJECT_DIR$/testing.py" />
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180925135652.html" />
+    <entry file="file://$PROJECT_DIR$/config/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180925144304.html" />
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180925150649.html" />
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180925150733.html" />
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180925151211.html" />
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180925151245.html" />
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180925151419.html" />
+    <entry file="file://$PROJECT_DIR$/config/getPerGameLog.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/mongoDB.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180925152047.html" />
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180925152419.html" />
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180925153351.html" />
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180925153438.html" />
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180925161724.html" />
+    <entry file="file://$PROJECT_DIR$/HTMLTestReportCN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22800">
+          <caret line="765" column="27" selection-start-line="765" selection-start-column="27" selection-end-line="765" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180926091409.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="72" column="21" lean-forward="true" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180926091659.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HTMLTestRunnerCN.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7290" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180926092220.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="180" column="29" selection-start-line="180" selection-start-column="29" selection-end-line="180" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://C:/Python27/Lib/unittest/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="7" column="18" lean-forward="true" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+          <folding>
+            <element signature="e#2192#2222#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180926101114.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/探险英雄20180926101141.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" column="43" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testCase/tanxianjiaCase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding>
+            <element signature="e#41#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
