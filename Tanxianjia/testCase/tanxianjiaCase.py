@@ -17,6 +17,7 @@ class TanxianjiaTest(unittest.TestCase):
     # 登录保ME后台
     @classmethod
     def setUpClass(cls):
+        print u'测试开始'
         cls.url = conf.dengluUrl
         cls.r = requests.post(cls.url,data=conf.data)
         cls.needCookie = cls.r.cookies.get_dict()
@@ -25,16 +26,18 @@ class TanxianjiaTest(unittest.TestCase):
     def tearDownClass(cls):
         print u'测试结束'
 
+    #测试每一行的内容跟数据库是否一致
     def test_Search(self):
         #输入查询条件的url
-        self.url2 = conf.chaxunUrl(pn1=2,ps1=20)
+        self.url2 = conf.chaxunUrl(pn1=1,ps1=10)
         self.r = requests.get(self.url2,cookies=self.needCookie)
         # print self.r.text
-        parttern = re.compile(r'</thead>.*?<tr>(.*?)</tr>.*?</table>', re.S)
-        content = parttern.findall(self.r.text)
+        pattern = re.compile(r'<th><input name="print" type="checkbox" value="(.*?)"></th>(.*?)</td>.*?</tr>', re.S)
+        content = pattern.findall(self.r.text)
 
         for i in content:
             # 获取每一行的记录
+            i = list(i)
             lst = getPerGameLog.findLog(i)
             gameID = lst[0]
             gameName = lst[2]
@@ -48,13 +51,20 @@ class TanxianjiaTest(unittest.TestCase):
             surveyTurn = lst[10]
             gameChannel = lst[11]
 
+            beginTime = list(beginTime)
+            beginTime.insert(10,' ')
+            beginTime = ''.join(beginTime)
+            endTime = list(endTime)
+            endTime.insert(10, ' ')
+            endTime = ''.join(endTime)
             if authorizeScope == u'手动授权':
                 authorizeScope = 'snsapi_userinfo'
             if surveyTurn == u'否':
                 surveyTurn = 'NOT_SURVEY_TURN'
+
             # #连上数据库对比并且断言
-            s = mongoDB.search(gameID)   # <type 'dict'>\
-            # self.assertEqual(s['gameName'],'ttt',msg=u'名字错误')
+            s = mongoDB.search(gameID)   # <type 'dict'>
+            self.assertEqual(s['gameName'],gameName,msg=u'名字错误')
             self.assertEqual(s['gameVersion'], gameVersion, msg=u'版本错误')
             self.assertEqual(s['openID'], openID, msg=u'openID错误')
             self.assertEqual(s['beginTime'], beginTime, msg=u'beginTime错误')
@@ -67,15 +77,6 @@ class TanxianjiaTest(unittest.TestCase):
             if track in s.keys():
                 self.assertEqual(s['track'], track, msg=u'track错误')
 
-
-
-
-
-
-
-
-
-
-
+    def test_
 
 
