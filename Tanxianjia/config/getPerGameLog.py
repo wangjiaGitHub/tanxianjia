@@ -5,6 +5,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
+# s是list类型
 def findLog(s):
     str1 = ','.join(s)
     dd = str1.replace(' ', '').replace('\n', '')
