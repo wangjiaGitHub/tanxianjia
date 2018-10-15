@@ -187,7 +187,7 @@ class Template_mixin(object):
 
     DEFAULT_TITLE = '单元测试报告'
     DEFAULT_DESCRIPTION = ''
-    DEFAULT_TESTER='最棒QA'
+    DEFAULT_TESTER='小猪猪佳佳'
 
     # ------------------------------------------------------------------------
     # HTML Template

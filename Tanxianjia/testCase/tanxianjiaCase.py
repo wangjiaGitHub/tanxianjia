@@ -43,6 +43,7 @@ class TanxianjiaTest(unittest.TestCase):
         # for i in content:
         #     # 获取每一行的记录
         #     i = list(i)
+        #     print i
         #     lst = getPerGameLog.findLog(i)
         #     gameID = lst[0]
         #     gameName = lst[2]
@@ -67,7 +68,8 @@ class TanxianjiaTest(unittest.TestCase):
         #     if surveyTurn == u'否':
         #         surveyTurn = 'NOT_SURVEY_TURN'
         #
-        #     # #连上数据库对比并且断言
+        #
+        #     #连上数据库对比并且断言
         #     s = mongoDB.search('gameLog',gameID)   # <type 'dict'>
         #     self.assertEqual(s['gameName'],gameName,msg=u'名字错误')
         #     self.assertEqual(s['gameVersion'], gameVersion, msg=u'版本错误')
@@ -81,6 +83,7 @@ class TanxianjiaTest(unittest.TestCase):
         #         self.assertEqual(s['lastOpenID'], lastOpenID, msg=u'lastOpenID错误')
         #     if track in s.keys():
         #         self.assertEqual(s['track'], track, msg=u'track错误')
+        # time.sleep(3)
 
 
     def test_case2(self):
@@ -99,10 +102,28 @@ class TanxianjiaTest(unittest.TestCase):
             if track != '':
                 self.assertEqual(s['track'],track,msg=u'轨迹错误')
             if trackTimestamp != '':
-                self.assertEqual(s['trackTimestamp'],trackTimestamp,msg=u'轨迹错误')
+                self.assertEqual(s['trackTimestamp'],trackTimestamp,msg=u'轨迹时间戳错误')
 
-            break
+            # 获取游戏分享次数，风险卡片分享次数，风险卡片箱点击次数，上一场景点击次数，下一场景点击次数
+            gameShareTimes = lookdetail.getSome('gameShareTimes',self.r.text)
+            cardShareTimes = lookdetail.getSome('cardShareTimes',self.r.text)
+            cardBoxClickTimes = lookdetail.getSome('cardBoxClickTimes',self.r.text)
+            rSceneClickTimes = lookdetail.getSome('rSceneClickTimes',self.r.text)
+            nSceneClickTimes = lookdetail.getSome('nSceneClickTimes',self.r.text)
+            s = mongoDB.search('gameStatistics', gameID)  # <type 'dict'>
+            self.assertEqual(s['gameShareTimes'],gameShareTimes,msg=u'游戏分享次数错误')
+            self.assertEqual(s['cardShareTimes'],cardShareTimes,msg=u'风险卡片分享错误')
+            self.assertEqual(s['cardBoxClickTimes'], cardBoxClickTimes, msg=u'宝盒点击次数错误')
+            self.assertEqual(s['rSceneClickTimes'], rSceneClickTimes, msg=u'上一场景点击次数错误')
+            self.assertEqual(s['nSceneClickTimes'], nSceneClickTimes, msg=u'下一场景点击次数错误')
         time.sleep(3)
+
+
+
+
+
+
+
 
 
 

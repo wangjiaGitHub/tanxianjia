@@ -1,0 +1,1154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>探险英雄后台自动化测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2.1"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 80%; }
+table       { font-size: 100%; }
+
+/* -- heading ---------------------------------------------------------------------- */
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- report ------------------------------------------------------------------------ */
+#total_row  { font-weight: bold; }
+.passCase   { color: #5cb85c; }
+.failCase   { color: #d9534f; font-weight: bold; }
+.errorCase  { color: #f0ad4e; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+</style>
+
+</head>
+<body >
+<script language="javascript" type="text/javascript">
+output_list = Array();
+
+/*level 调整增加只显示通过用例的分类 --Findyou
+0:Summary //all hiddenRow
+1:Failed  //pt hiddenRow, ft none
+2:Pass    //pt none, ft hiddenRow
+3:All     //pt none, ft none
+*/
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level == 2 || level == 0 ) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level < 2) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+    }
+
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        //ID修改 点 为 下划线 -Findyou
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
+        }
+        else {
+            document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
+        }
+    }
+}
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+</script>
+<div class='heading'>
+<h1 style="font-family: Microsoft YaHei">探险英雄后台自动化测试报告</h1>
+<p class='attribute'><strong>测试人员 : </strong> 最棒QA</p>
+<p class='attribute'><strong>开始时间 : </strong> 2018-10-15 15:24:53</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:03.194000</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 2，通过 2，通过率= 100.00%</p>
+
+<p class='description'></p>
+</div>
+
+
+
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 100.00% }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 0 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 2 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 2 }</a>
+</p>
+<table id='result_table' class="table table-condensed table-bordered table-hover">
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row' class="text-center success" style="font-weight: bold;font-size: 14px;">
+    <td>用例集/测试用例</td>
+    <td>总计</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>详细</td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>tanxianjiaCase.TanxianjiaTest</td>
+    <td class="text-center">2</td>
+    <td class="text-center">2</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',2)" class="detail" id='c1'>详细</a></td>
+</tr>
+
+<tr id='pt1_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_case1</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse in">
+    <pre>
+    
+pt1_1: &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;!-- Tell the browser to be responsive to screen width --&gt;
+    &lt;meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"&gt;
+    &lt;!-- Bootstrap 3.3.5 --&gt;
+    &lt;link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css"&gt;
+    &lt;!-- Font Awesome --&gt;
+    &lt;link rel="stylesheet" href="/static/font-awesome-4.4.0/css/font-awesome.min.css"&gt;
+    &lt;!-- Ionicons --&gt;
+    &lt;link rel="stylesheet" href="/static/ionicons-2.0.1/css/ionicons.min.css"&gt;
+    &lt;!-- Theme style --&gt;
+    &lt;link rel="stylesheet" href="/static/dist/css/AdminLTE.css"&gt;
+    &lt;!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. --&gt;
+    &lt;link rel="stylesheet" href="/static/dist/css/skins/skin-red-light.css"&gt;
+    &lt;link rel="stylesheet" href="/static/plugins/timepicker/bootstrap-datetimepicker.css"/&gt;
+    &lt;link rel="stylesheet" href="/static/plugins/timepicker/daterangepicker.css"/&gt;
+    &lt;style&gt;
+        .error{
+            color:red;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body class="hold-transition sidebar-mini skin-red-light"&gt;
+&lt;div class="wrapper"&gt;
+
+&lt;header class="main-header"&gt;
+    &lt;!-- Logo --&gt;
+    &lt;a href="/" class="logo"&gt;
+        &lt;!-- mini logo for sidebar mini 50x50 pixels --&gt;
+        &lt;span class="logo-mini"&gt;&lt;b&gt;智能保险管理器&lt;/b&gt;&lt;/span&gt;
+        &lt;!-- logo for regular state and mobile devices --&gt;
+        &lt;span class="logo-lg"&gt;&lt;b&gt;智能保险管理器后台&lt;/b&gt;&lt;/span&gt;
+    &lt;/a&gt;
+    &lt;!-- Header Navbar: style can be found in header.less --&gt;
+    &lt;nav class="navbar navbar-static-top" role="navigation"&gt;
+        &lt;!-- Sidebar toggle button--&gt;
+        &lt;a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+            &lt;span class="icon-bar"&gt;&lt;/span&gt;
+        &lt;/a&gt;
+        &lt;div class="navbar-custom-menu"&gt;
+            &lt;ul class="nav navbar-nav"&gt;
+                &lt;!-- User Account: style can be found in dropdown.less --&gt;
+                &lt;li class="dropdown user user-menu"&gt;
+                    &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown"&gt;
+                        &lt;img src="/static/dist/img/user2-160x160.jpg" class="user-image" alt="User Image"&gt;
+                        &lt;span class="hidden-xs"&gt;&lt;/span&gt;
+                    &lt;/a&gt;
+                    &lt;ul class="dropdown-menu"&gt;
+                        &lt;!-- User image --&gt;
+                        &lt;li class="user-header"&gt;
+                            &lt;img src="/static/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image"&gt;
+                            &lt;p&gt;
+                                
+                            &lt;/p&gt;
+                            &lt;div&gt;
+                                &lt;a href="/logout" class="btn btn-default btn-flat"&gt;退出登录&lt;/a&gt;
+                            &lt;/div&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;&lt;aside class="main-sidebar"&gt;
+    &lt;!-- sidebar: style can be found in sidebar.less --&gt;
+    &lt;section class="sidebar"&gt;
+        &lt;!-- Sidebar user panel --&gt;
+        &lt;div class="user-panel"&gt;
+        &lt;/div&gt;
+        &lt;!-- sidebar menu: : style can be found in sidebar.less --&gt;
+        &lt;ul class="sidebar-menu"&gt;
+            &lt;li class="header"&gt;导航栏&lt;/li&gt;
+            &lt;li class="treeview"&gt;
+                &lt;a href="#"&gt;
+                    &lt;i class="fa fa-dashboard"&gt;&lt;/i&gt; &lt;span&gt;风险测评&lt;/span&gt; &lt;i class="fa fa-angle-left pull-right"&gt;&lt;/i&gt;
+                &lt;/a&gt;
+                &lt;ul class="treeview-menu"&gt;
+                    &lt;li&gt;&lt;a id="menu-1" href="/survey?pn=1&amp;ps=10"&gt;&lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;测评结果查询&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a id="menu-2" href="/info?pn=1&amp;ps=10"&gt;&lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;测评记录查询&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a id="menu-3" href="/deed?pn=1&amp;ps=10"&gt;&lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;契约记录查询&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a id="menu-4" href="/weixin?pn=1&amp;ps=10"&gt;&lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;微信记录查询&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a id="menu-5" href="/trip?pn=1&amp;ps=10"&gt;&lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;目的地记录查询&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+
+            &lt;/li&gt;
+            &lt;li class="treeview"&gt;
+                &lt;a href="#"&gt;
+                    &lt;i class="fa fa-dashboard"&gt;&lt;/i&gt; &lt;span&gt;保单管理&lt;/span&gt; &lt;i class="fa fa-angle-left pull-right"&gt;&lt;/i&gt;
+                &lt;/a&gt;
+                &lt;ul class="treeview-menu"&gt;
+                    &lt;li&gt;&lt;a id="menu-10" href="/record/list?pn=1&amp;ps=10"&gt;&lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;委托记录查询&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a id="menu-11" href="/policy/list?pn=1&amp;ps=10"&gt;&lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;保单列表&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class="treeview"&gt;
+                &lt;a href="#"&gt;
+                    &lt;i class="fa fa-dashboard"&gt;&lt;/i&gt; &lt;span&gt;保险推荐&lt;/span&gt; &lt;i class="fa fa-angle-left pull-right"&gt;&lt;/i&gt;
+                &lt;/a&gt;
+                &lt;ul class="treeview-menu"&gt;                    &lt;li&gt;&lt;a id="menu-20" href="/insRecommend/list?pn=1&amp;ps=10"&gt;&lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;保险产品推荐配置&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class="treeview"&gt;
+                &lt;a href="#"&gt;
+                    &lt;i class="fa fa-dashboard"&gt;&lt;/i&gt; &lt;span&gt;探险家小游戏&lt;/span&gt; &lt;i class="fa fa-angle-left pull-right"&gt;&lt;/i&gt;
+                &lt;/a&gt;
+                &lt;ul class="treeview-menu"&gt;                    &lt;li&gt;&lt;a id="menu-30" href="/soEasy/gameInfos/?pn=1&amp;ps=10"&gt;&lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;游戏结果查询&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;li class="treeview"&gt;
+                &lt;a href="#"&gt;
+                    &lt;i class="fa fa-dashboard"&gt;&lt;/i&gt; &lt;span&gt;探险家（v2）&lt;/span&gt; &lt;i class="fa fa-angle-left pull-right"&gt;&lt;/i&gt;
+                &lt;/a&gt;
+                &lt;ul class="treeview-menu"&gt;                    &lt;li&gt;&lt;a id="menu-40" href="/crazy/finder/game/logs"&gt;&lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;游戏记录&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/section&gt;
+    &lt;!-- /.sidebar --&gt;
+&lt;/aside&gt;
+&lt;div id="content-wrapper" class="content-wrapper"&gt;
+    &lt;section class="content-header"&gt;
+        &lt;h1&gt;
+            游戏记录查询
+        &lt;/h1&gt;
+        &lt;ol class="breadcrumb"&gt;
+            &lt;li&gt;&lt;a href="/crazy/finder/game/logs"&gt;&lt;i class="fa fa-dashboard"&gt;&lt;/i&gt; 游戏记录列表&lt;/a&gt;&lt;/li&gt;
+        &lt;/ol&gt;
+    &lt;/section&gt;
+    &lt;section class="content"&gt;
+                &lt;div class="box box-default"&gt;
+            &lt;div class="box-header with-border"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-md-6"&gt;
+                        &lt;div id="example1_filter" class="dataTables_filter"&gt;
+                            &lt;table style="border-collapse:separate; border-spacing:0px 10px;"&gt;
+                                &lt;tr&gt;
+                                    &lt;th&gt;
+                                        微信授权：
+                                    &lt;/th&gt;
+                                    &lt;th style="padding-right: 20px;"&gt;
+                                        &lt;select class="form-control col-sm-6" id="wxSelect"&gt;
+                                            &lt;option value=""
+                                                                                                    selected
+                                                &gt;请选择&lt;/option&gt;
+                                            &lt;option value="snsapi_base"
+                                                &gt;静默授权&lt;/option&gt;
+                                            &lt;option value="snsapi_userinfo"
+                                                &gt;手动授权&lt;/option&gt;
+                                        &lt;/select&gt;
+                                    &lt;/th&gt;
+                                    &lt;th&gt;
+                                        openID：
+                                    &lt;/th&gt;
+                                    &lt;th style="padding-right: 20px;"&gt;
+                                        &lt;input type="text" class="form-control col-sm-6" id="game_openid" value=""/&gt;
+                                    &lt;/th&gt;
+                                &lt;/tr&gt;
+                                &lt;tr &gt;
+                                    &lt;th&gt;
+                                        风险测评跳转：
+                                    &lt;/th&gt;
+                                    &lt;th style="padding-right: 20px;"&gt;
+                                        &lt;select class="form-control col-sm-6" id="surveyTurn"&gt;
+                                            &lt;option value=""
+                                                                                                    selected
+                                                &gt;请选择&lt;/option&gt;
+                                            &lt;option value="SURVEY_TURN"
+                                                &gt;是&lt;/option&gt;
+                                            &lt;option value="NOT_SURVEY_TURN"
+                                                &gt;否&lt;/option&gt;
+                                        &lt;/select&gt;
+                                    &lt;/th&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;th&gt;
+                                        游戏开始时间：
+                                    &lt;/th&gt;
+                                    &lt;th style="padding-right: 20px; "&gt;
+                                        &lt;input type="text" id="daterange" class="form-control"&gt;
+                                        &lt;input type="hidden" name="beginDate" id="beginDate" value="" /&gt;
+                                        &lt;input type="hidden" name="endDate" id="endDate" value="" /&gt;
+                                    &lt;/th&gt;
+                                    &lt;th&gt;
+                                        &lt;a class="btn btn-default" href="javascript:void(0);" id="clear" onclick="timeclear()"&gt;清除时间&lt;/a&gt;
+                                    &lt;/th&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;th colspan="4"&gt;
+                                        &lt;a class="btn btn-default" href="javascript:void(0);" id="search" onclick="searchByQuery()"&gt;查询&lt;/a&gt;
+                                        &lt;a onclick="refresh()" class="btn btn-default"&gt;刷新&lt;/a&gt;
+                                    &lt;/th&gt;
+                                &lt;/tr&gt;
+                            &lt;/table&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class="col-md-6"&gt;
+                        &lt;div class="table-responsive" style="margin-top: 1.5%"&gt;
+                            &lt;table class="table table-bordered table-striped"&gt;
+                                &lt;colgroup&gt;
+                                    &lt;col class="col-xs-4"&gt;
+                                    &lt;col class="col-xs-2"&gt;
+                                    &lt;col class="col-xs-4"&gt;
+                                    &lt;col class="col-xs-2"&gt;
+                                &lt;/colgroup&gt;
+                                &lt;tbody class="center"&gt;
+                                    &lt;tr&gt;
+                                        &lt;th scope="row" class="center"&gt;
+                                            游戏总次数
+                                        &lt;/th&gt;
+                                        &lt;td id="totalPlayTimes"&gt;983&lt;/td&gt;
+                                        &lt;th scope="row" class="center"&gt;
+                                            游戏总时长(s)
+                                        &lt;/th&gt;
+                                        &lt;td id="totalDuration"&gt;731876&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                    &lt;tr&gt;
+                                        &lt;th scope="row" class="center"&gt;
+                                            用户总人数
+                                        &lt;/th&gt;
+                                        &lt;td id="totalPlayers"&gt;307&lt;/td&gt;
+                                        &lt;th scope="row" class="center"&gt;
+                                            人均游戏时长(s)
+                                        &lt;/th&gt;
+                                        &lt;td id="aveDuration"&gt;2383.96&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                    &lt;tr&gt;
+                                        &lt;th scope="row" class="center"&gt;
+                                            游戏分享率(%)
+                                        &lt;/th&gt;
+                                        &lt;td id="gameShareRate"&gt;10.38&lt;/td&gt;
+                                        &lt;th scope="row" class="center"&gt;
+                                            游戏分享接受率(%)
+                                        &lt;/th&gt;
+                                        &lt;td id="gameShareAcceptRate"&gt;100.0&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                    &lt;tr&gt;
+                                        &lt;th scope="row" class="center"&gt;
+                                            用户分享率(%)
+                                        &lt;/th&gt;
+                                        &lt;td id="userShareRate"&gt;16.29&lt;/td&gt;
+                                        &lt;th scope="row" class="center"&gt;
+                                            用户分享接受率(%)
+                                        &lt;/th&gt;
+                                        &lt;td id="userShareAcceptRate"&gt;100.0&lt;/td&gt;
+                                    &lt;/tr&gt;
+                                    &lt;tr&gt;
+                                        &lt;th scope="row" class="center"&gt;
+                                            人均分享次数
+                                        &lt;/th&gt;
+                                        &lt;td id="aveUserShareTimes"&gt;3.88&lt;/td&gt;
+                                        &lt;th scope="row" class="center"&gt;
+                                            场景统计详情
+                                        &lt;/th&gt;
+                                        &lt;td&gt;
+                                            &lt;a href="#" data-toggle="modal" data-target="#sceneModal"&gt;查看&lt;/a&gt;
+                                        &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                &lt;/tbody&gt;
+                            &lt;/table&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="pull-right"&gt;
+                    &lt;a onclick="exportByIDs();" class="btn btn-default" &gt;导出&lt;/a&gt;
+                    &lt;a onclick="exportAll();"  class="btn btn-default" &gt;导出全部&lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="box-body"&gt;
+                &lt;div class="core-product-div"&gt;
+                    &lt;div class="row"&gt;
+                        &lt;div class="col-md-12"&gt;
+                            &lt;table class="table table-bordered" style="table-layout: fixed; word-break:break-all"&gt;
+                                &lt;thead&gt;
+                                    &lt;tr&gt;
+                                        &lt;th width="50px"&gt;&lt;input type="checkbox" id="selected" onclick="selectAll()"&gt;&lt;/th&gt;
+                                        &lt;th width="50px"&gt;序号&lt;/th&gt;
+                                        &lt;th&gt;游戏名称&lt;/th&gt;
+                                        &lt;th&gt;游戏版本&lt;/th&gt;
+                                        &lt;th&gt;openid&lt;/th&gt;
+                                        &lt;th&gt;lastopenid&lt;/th&gt;
+                                        &lt;th&gt;游戏开始时间&lt;/th&gt;
+                                        &lt;th&gt;游戏结束时间&lt;/th&gt;
+                                        &lt;th&gt;游戏过程记录&lt;/th&gt;
+                                        &lt;th&gt;微信授权&lt;/th&gt;
+                                        &lt;th&gt;风险测评跳转&lt;/th&gt;
+                                        &lt;th&gt;渠道&lt;/th&gt;
+                                        &lt;th&gt;操作&lt;/th&gt;
+                                    &lt;/tr&gt;
+                                &lt;/thead&gt;
+                                                                    &lt;tr&gt;
+                                                                                &lt;th&gt;&lt;input name="print" type="checkbox" value="8f59a217-863a-41f9-8ade-0aed6a85f8dc"&gt;&lt;/th&gt;
+                                        &lt;th&gt;1&lt;/th&gt;
+                                        &lt;th&gt;探险英雄&lt;/th&gt;
+                                        &lt;th&gt;v2&lt;/th&gt;
+                                        &lt;th&gt;o3Ncf5SgSUK0cMkaGhXELDH5YL1U&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 07:11:35&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 07:20:41&lt;/th&gt;
+                                        &lt;th&gt;ncx-rcx-back-bo-back-ncx-rcx-s1-106-105-104-hi-102-101-107-121-123-111-109-122-118-110-113-108-103-3s-s2-201-207-203-205-202-206-216-219-204-3s-s3-308-304-303-301-305-306-302-309-307-3s-s4-404-402-401-407-411-406-403-405-12s-s5&lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            手动授权
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            否
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;BAO_ME&lt;/th&gt;
+                                        &lt;td&gt;
+                                            &lt;a href="/crazy/finder/game/log?gameLogID=8f59a217-863a-41f9-8ade-0aed6a85f8dc"&gt;查看详情&lt;/a&gt;
+                                            &lt;/br&gt;
+                                            &lt;a href="/crazy/finder/user/account?openID=o3Ncf5SgSUK0cMkaGhXELDH5YL1U"&gt;用户中心&lt;/a&gt;
+                                        &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                                                    &lt;tr&gt;
+                                                                                &lt;th&gt;&lt;input name="print" type="checkbox" value="62d8969b-f908-4693-9de0-9e98d7804d67"&gt;&lt;/th&gt;
+                                        &lt;th&gt;2&lt;/th&gt;
+                                        &lt;th&gt;探险英雄&lt;/th&gt;
+                                        &lt;th&gt;v2&lt;/th&gt;
+                                        &lt;th&gt;o3Ncf5SgSUK0cMkaGhXELDH5YL1U&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 07:08:40&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 07:08:40&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            手动授权
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            否
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;BAO_ME&lt;/th&gt;
+                                        &lt;td&gt;
+                                            &lt;a href="/crazy/finder/game/log?gameLogID=62d8969b-f908-4693-9de0-9e98d7804d67"&gt;查看详情&lt;/a&gt;
+                                            &lt;/br&gt;
+                                            &lt;a href="/crazy/finder/user/account?openID=o3Ncf5SgSUK0cMkaGhXELDH5YL1U"&gt;用户中心&lt;/a&gt;
+                                        &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                                                    &lt;tr&gt;
+                                                                                &lt;th&gt;&lt;input name="print" type="checkbox" value="671d4832-b9be-45f6-9dcc-3857f2c2a6a1"&gt;&lt;/th&gt;
+                                        &lt;th&gt;3&lt;/th&gt;
+                                        &lt;th&gt;探险英雄&lt;/th&gt;
+                                        &lt;th&gt;v2&lt;/th&gt;
+                                        &lt;th&gt;null&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 06:41:27&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 07:00:27&lt;/th&gt;
+                                        &lt;th&gt;ncx-s5-501-510-back-s5-507-517-511-508-515-515-506-503-514-509-517-517-513-513-505-518-502-518-512-ns5-512-518-509-507-511-517-510-ns5-508-ns5-504-508-509-517-517-511-505-506-510-503-512-515-507-513-501-ns5-501-510-507-509-505-508-511-517-506-503-514-514-512-504-518-518-502-518-518-518-12c-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-518-514-514-514-514-514-514-514-514-514-514-514-514-515-515-515-515-515-515-515-515-515-515-515-516-516-516-516-516-516-516-516-516-517-517-516-515-515-515-back-rcx-ncx-rcx-s4-r3-r3-r2-r2-r2-r2-r2-r2-r2-r2-r1-s2-201-sb-sb-SP201-SP201-SP201-SP201-SP201-SP201-SP201-SP201-sbc-s3-s4-s5-ns5-r4-r3-r2-r1-106-104-124-105-116-117-101-110-110-119-118-122-119-119-119-119-121-128-107-103-125-127-115-113-115-108-127-127-112-112-111-109-102-12c-s2-207-203-215-215-215-221-215-217-205-212-211-222-223-223-223-222-222-206-219-204-216-220-220-220-202-12c-s3-305-301-310-310-310-310-310-310-310-310-310-303-302-304-ns3-312-303-309-301-302-315-315-304-308-317-317-307-316-305-318-318-314-306-12c-s4-405-402-404-419-422-401-407-421-403-414-414-406-415-12c-416-416-416-421-415-411-s5-508-515-510-506-503-514-514-511-517-509-505-512-513-513-513-513-513-516-516-519-519-501-504-507-517-517-502-12c-back-bo-P502-P507-P501-P505-P506-P503-P512-P504-P510-P511-P103-P107-P108-P104-P109-P203-P206-P101-P207-P302-P404-P402-P401-P407-P102-P403-P307-P308-P205-P202-P204-P304-P303-P305-P309-P306-P301-back-rcx-ncx-rcx-ncx-rcx-ncx&lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            手动授权
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            否
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;BAO_ME&lt;/th&gt;
+                                        &lt;td&gt;
+                                            &lt;a href="/crazy/finder/game/log?gameLogID=671d4832-b9be-45f6-9dcc-3857f2c2a6a1"&gt;查看详情&lt;/a&gt;
+                                            &lt;/br&gt;
+                                            &lt;a href="/crazy/finder/user/account?openID=null"&gt;用户中心&lt;/a&gt;
+                                        &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                                                    &lt;tr&gt;
+                                                                                &lt;th&gt;&lt;input name="print" type="checkbox" value="65911a7c-e447-49b1-9384-9443e3c5e8a8"&gt;&lt;/th&gt;
+                                        &lt;th&gt;4&lt;/th&gt;
+                                        &lt;th&gt;探险英雄&lt;/th&gt;
+                                        &lt;th&gt;v2&lt;/th&gt;
+                                        &lt;th&gt;o3Ncf5TJrb3VMs5awyKvJ7lMT5AQ&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 06:41:21&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 07:06:52&lt;/th&gt;
+                                        &lt;th&gt;s4-r3-r3-r2-back-ncx-rcx-ncx-s5-517-back-rcx-s1-s2-s3-s4-s5-back-rcx-s4-s5-507-sb-SP507-SP507-SP507-sbc-501-503-sb-SP503-sb-SP507-sb-sbc-back-rcx-bo-P207-P204-P501-P509-back-ncx-rcx-ncx-rcx-s2-204-back-ncx-rcx-s1-s2-s3-s4-s5-ns5-sb-sbc-508-r4-r3-314-306-r2-back-s1-105-sb-sbc-back-bo-P511-P505-P506-P508-P503-P507-P507&lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            手动授权
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            否
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;BAO_ME&lt;/th&gt;
+                                        &lt;td&gt;
+                                            &lt;a href="/crazy/finder/game/log?gameLogID=65911a7c-e447-49b1-9384-9443e3c5e8a8"&gt;查看详情&lt;/a&gt;
+                                            &lt;/br&gt;
+                                            &lt;a href="/crazy/finder/user/account?openID=o3Ncf5TJrb3VMs5awyKvJ7lMT5AQ"&gt;用户中心&lt;/a&gt;
+                                        &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                                                    &lt;tr&gt;
+                                                                                &lt;th&gt;&lt;input name="print" type="checkbox" value="784902ca-0897-46b6-9e75-34cf29768f06"&gt;&lt;/th&gt;
+                                        &lt;th&gt;5&lt;/th&gt;
+                                        &lt;th&gt;探险英雄&lt;/th&gt;
+                                        &lt;th&gt;v2&lt;/th&gt;
+                                        &lt;th&gt;null&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 06:40:26&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 06:41:21&lt;/th&gt;
+                                        &lt;th&gt;bo&lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            手动授权
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            否
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;BAO_ME&lt;/th&gt;
+                                        &lt;td&gt;
+                                            &lt;a href="/crazy/finder/game/log?gameLogID=784902ca-0897-46b6-9e75-34cf29768f06"&gt;查看详情&lt;/a&gt;
+                                            &lt;/br&gt;
+                                            &lt;a href="/crazy/finder/user/account?openID=null"&gt;用户中心&lt;/a&gt;
+                                        &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                                                    &lt;tr&gt;
+                                                                                &lt;th&gt;&lt;input name="print" type="checkbox" value="d261df19-328c-41fe-ba09-10f1d7f3441a"&gt;&lt;/th&gt;
+                                        &lt;th&gt;6&lt;/th&gt;
+                                        &lt;th&gt;探险英雄&lt;/th&gt;
+                                        &lt;th&gt;v2&lt;/th&gt;
+                                        &lt;th&gt;null&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 06:38:06&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 06:39:06&lt;/th&gt;
+                                        &lt;th&gt;s1-back-s2-back-s1-124-114-muF-nuN-back-ncx-s5&lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            手动授权
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            否
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;BAO_ME&lt;/th&gt;
+                                        &lt;td&gt;
+                                            &lt;a href="/crazy/finder/game/log?gameLogID=d261df19-328c-41fe-ba09-10f1d7f3441a"&gt;查看详情&lt;/a&gt;
+                                            &lt;/br&gt;
+                                            &lt;a href="/crazy/finder/user/account?openID=null"&gt;用户中心&lt;/a&gt;
+                                        &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                                                    &lt;tr&gt;
+                                                                                &lt;th&gt;&lt;input name="print" type="checkbox" value="148e3a1b-2a8f-400d-a5a4-8dbd8c64912f"&gt;&lt;/th&gt;
+                                        &lt;th&gt;7&lt;/th&gt;
+                                        &lt;th&gt;探险英雄&lt;/th&gt;
+                                        &lt;th&gt;v2&lt;/th&gt;
+                                        &lt;th&gt;null&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 06:37:59&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 06:37:59&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            手动授权
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            否
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;BAO_ME&lt;/th&gt;
+                                        &lt;td&gt;
+                                            &lt;a href="/crazy/finder/game/log?gameLogID=148e3a1b-2a8f-400d-a5a4-8dbd8c64912f"&gt;查看详情&lt;/a&gt;
+                                            &lt;/br&gt;
+                                            &lt;a href="/crazy/finder/user/account?openID=null"&gt;用户中心&lt;/a&gt;
+                                        &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                                                    &lt;tr&gt;
+                                                                                &lt;th&gt;&lt;input name="print" type="checkbox" value="352d549e-0bb6-44c8-992c-6d10c5eaa8bf"&gt;&lt;/th&gt;
+                                        &lt;th&gt;8&lt;/th&gt;
+                                        &lt;th&gt;探险英雄&lt;/th&gt;
+                                        &lt;th&gt;v2&lt;/th&gt;
+                                        &lt;th&gt;null&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 05:37:33&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 06:37:46&lt;/th&gt;
+                                        &lt;th&gt;ncx-rcx-s1-bo-P109-P201-back-ncx-rcx-s2-201-207-203-202-220-219-204-216-s3-315-304-303-305-314-306-301-309-302-s4-418-404-422-405-411-402-401-413-407-415-406-s5-511-517-509-508-510-506-503-512-504-505-ns5-back-s5-back-rcx-s1-back-s2-back-bo-P406-P405-P509-P508-back-s2-back-ncx-rcx-back-bo-back-s1-back-back-ncx-rcx-ncx-s5-bo-back-rcx-ncx-bo&lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            手动授权
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            否
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;BAO_ME&lt;/th&gt;
+                                        &lt;td&gt;
+                                            &lt;a href="/crazy/finder/game/log?gameLogID=352d549e-0bb6-44c8-992c-6d10c5eaa8bf"&gt;查看详情&lt;/a&gt;
+                                            &lt;/br&gt;
+                                            &lt;a href="/crazy/finder/user/account?openID=null"&gt;用户中心&lt;/a&gt;
+                                        &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                                                    &lt;tr&gt;
+                                                                                &lt;th&gt;&lt;input name="print" type="checkbox" value="4c22fe40-3cd0-4d3e-aadf-5cc9dde9aec2"&gt;&lt;/th&gt;
+                                        &lt;th&gt;9&lt;/th&gt;
+                                        &lt;th&gt;探险英雄&lt;/th&gt;
+                                        &lt;th&gt;v2&lt;/th&gt;
+                                        &lt;th&gt;null&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 05:32:14&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 05:32:14&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            手动授权
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            否
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;BAO_ME&lt;/th&gt;
+                                        &lt;td&gt;
+                                            &lt;a href="/crazy/finder/game/log?gameLogID=4c22fe40-3cd0-4d3e-aadf-5cc9dde9aec2"&gt;查看详情&lt;/a&gt;
+                                            &lt;/br&gt;
+                                            &lt;a href="/crazy/finder/user/account?openID=null"&gt;用户中心&lt;/a&gt;
+                                        &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                                                    &lt;tr&gt;
+                                                                                &lt;th&gt;&lt;input name="print" type="checkbox" value="ff8ba207-b2a4-4f45-9888-8d50fd1ffca0"&gt;&lt;/th&gt;
+                                        &lt;th&gt;10&lt;/th&gt;
+                                        &lt;th&gt;探险英雄&lt;/th&gt;
+                                        &lt;th&gt;v2&lt;/th&gt;
+                                        &lt;th&gt;o3Ncf5V2YVkEnDPN_C_Jh0s68l3I&lt;/th&gt;
+                                        &lt;th&gt;&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 05:31:14&lt;/th&gt;
+                                        &lt;th&gt;2018-10-15 05:43:51&lt;/th&gt;
+                                        &lt;th&gt;s1-116-124-111-111-121-114-121-114-121-128-123-105-s2-217-211-211-211-211-217-211-212-211-215-210-221-217-205-222-222-222-222-207-202-214-216-214-214-219-204-220-220-220-220-220-220-222-220-220-220-220-220-220-220-220-220-220-220-220-220-218-218-218-215-201-222-s3-315-315-302-306-312-304-303-305-307-318-s4-407-421-413-421-421-401-419-419-413-413-413-416-413-413-416-416-416-416-404-418-418-418-418-422-418-422-418-418-422-422-422-422-422-422-422-422-422-422-422-422-422-422-422-422-422-411-419-419-418-402-ns4-402-ns4-411-402-ns4-402-ns4-416-416-416-416-416-416-416-416-416-402-403-410-414-422-422-405-401-407-s5-507-508-509-515-515-515-515-515-515-515-515-515-515-515-515-515-515-515-512-514-520-ns5-507-509-504-508-515-515-515-515-515-512-sb-SP512-sbc-516-516-516-516-516-516-515-515-516-516-516-502-516-back-s5-516-518-516-516-516-514-516-514-514-hi-505-516-517-517-501-510-506-503-519-514-515-515-515-515-515-515-515-515-516-516-511-back-s5-ns5-507-509-516-ns5-507-512-505-516-503&lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            手动授权
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;
+                                                                                            否
+                                                                                    &lt;/th&gt;
+                                        &lt;th&gt;BAO_ME&lt;/th&gt;
+                                        &lt;td&gt;
+                                            &lt;a href="/crazy/finder/game/log?gameLogID=ff8ba207-b2a4-4f45-9888-8d50fd1ffca0"&gt;查看详情&lt;/a&gt;
+                                            &lt;/br&gt;
+                                            &lt;a href="/crazy/finder/user/account?openID=o3Ncf5V2YVkEnDPN_C_Jh0s68l3I"&gt;用户中心&lt;/a&gt;
+                                        &lt;/td&gt;
+                                    &lt;/tr&gt;
+                                                            &lt;/table&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;select class="form-control col-sm-6" style="width:50%;" id="pageSelect" onchange="searchByQuery()"&gt;
+                    &lt;option value="10"
+                                                    selected
+                        &gt;10条/页&lt;/option&gt;
+                    &lt;option value="20"
+                        &gt;20条/页&lt;/option&gt;
+                    &lt;option value="50"
+                        &gt;50条/页&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+            &lt;div class="box-footer"&gt;
+                &lt;ul class="pagination pagination-sm no-margin pull-right"&gt;
+                                            &lt;li class="disabled"&gt;&lt;a href="#" onclick="return false"&gt;首页&lt;/a&gt;&lt;/li&gt;
+                        &lt;li class="disabled"&gt;&lt;a href="#" onclick="return false"&gt;上一页&lt;/a&gt;&lt;/li&gt;
+                                                                &lt;li&gt;&lt;a href="/crazy/finder/game/logs?pn=2&amp;ps=10&amp;authorizeScope=&amp;openId=&amp;surveyTurn=&amp;beginDate=&amp;endDate="&gt;下一页&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href="/crazy/finder/game/logs?pn=99&amp;ps=10&amp;authorizeScope=&amp;openId=&amp;surveyTurn=&amp;beginDate=&amp;endDate="&gt;尾页&lt;/a&gt;&lt;/li&gt;
+                                        &lt;li style="padding: 10px;line-height: 30px"&gt;(当前第1页，共99页/983条记录)&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div id="menuContent" class="menuContent" style="display:none; position: absolute;"&gt;
+            &lt;ul id="tree" class="ztree" style="margin-top:0; width:160px;"&gt;&lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+&lt;/div&gt;
+
+&lt;!-- 场景统计详情模态框 --&gt;
+&lt;div class="modal fade col-md-6" id="sceneModal"  tabindex="-1" role="dialog" aria-labelledby="sceneModalLabel"&gt;
+    &lt;div class="modal-header"&gt;
+        &lt;button type="button" class="close" data-dismiss="modal" aria-label="Close"&gt;&lt;span aria-hidden="true"&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;
+        &lt;h4 class="modal-title" id="sceneModalLabel"&gt;游戏场景统计信息&lt;/h4&gt;
+    &lt;/div&gt;
+    &lt;div class="modal-body"&gt;
+        &lt;table class="table table-striped"&gt;
+            &lt;thead&gt;
+            &lt;tr&gt;
+                &lt;th class="center"&gt;场景ID&lt;/th&gt;
+                &lt;th class="center"&gt;场景名称&lt;/th&gt;
+                &lt;th class="center"&gt;游戏总次数&lt;/th&gt;
+                &lt;th class="center"&gt;游戏总时间(s)&lt;/th&gt;
+                &lt;th class="center"&gt;游戏总人数&lt;/th&gt;
+                &lt;th class="center"&gt;人均游戏时间(s)&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody id="sceneBody"&gt;
+                                &lt;tr class="text-center"&gt;
+                    &lt;th scope="row" class="center"&gt;
+                        s1
+                    &lt;/th&gt;
+                    &lt;td scope="row"&gt;
+                        客厅
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        1708
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        554597
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        242
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        2291.72
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                                &lt;tr class="text-center"&gt;
+                    &lt;th scope="row" class="center"&gt;
+                        s2
+                    &lt;/th&gt;
+                    &lt;td scope="row"&gt;
+                        厨房
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        428
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        47588
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        157
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        303.11
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                                &lt;tr class="text-center"&gt;
+                    &lt;th scope="row" class="center"&gt;
+                        s3
+                    &lt;/th&gt;
+                    &lt;td scope="row"&gt;
+                        浴室
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        329
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        54292
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        124
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        437.84
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                                &lt;tr class="text-center"&gt;
+                    &lt;th scope="row" class="center"&gt;
+                        s4
+                    &lt;/th&gt;
+                    &lt;td scope="row"&gt;
+                        卧室
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        272
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        35687
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        119
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        299.89
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                                &lt;tr class="text-center"&gt;
+                    &lt;th scope="row" class="center"&gt;
+                        s5
+                    &lt;/th&gt;
+                    &lt;td scope="row"&gt;
+                        十字路口
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        60
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        43897
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        7
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        6271.0
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                                &lt;tr class="text-center"&gt;
+                    &lt;th scope="row" class="center"&gt;
+                        s6
+                    &lt;/th&gt;
+                    &lt;td scope="row"&gt;
+                        公交车
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        0
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        0
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        0
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        0.0
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                                &lt;tr class="text-center"&gt;
+                    &lt;th scope="row" class="center"&gt;
+                        s7
+                    &lt;/th&gt;
+                    &lt;td scope="row"&gt;
+                        地铁站
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        0
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        0
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        0
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        0.0
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                                &lt;tr class="text-center"&gt;
+                    &lt;th scope="row" class="center"&gt;
+                        s8
+                    &lt;/th&gt;
+                    &lt;td scope="row"&gt;
+                        轿车
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        0
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        0
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        0
+                    &lt;/td&gt;
+                    &lt;td scope="row"&gt;
+                        0.0
+                    &lt;/td&gt;
+                &lt;/tr&gt;
+                            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+    &lt;div class="modal-footer"&gt;
+        &lt;button type="button" class="btn btn-default" data-dismiss="modal"&gt;关闭&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;footer class="main-footer"&gt;
+    &lt;div class="pull-right hidden-xs"&gt;
+        &lt;b&gt;Version&lt;/b&gt; 0.1
+    &lt;/div&gt;
+    &lt;strong&gt;Copyright &amp;copy; 2016-2017 保险测评后台管理系统.&lt;/strong&gt;
+&lt;/footer&gt;
+&lt;/div&gt;&lt;!-- ./wrapper --&gt;
+&lt;!-- jQuery 2.1.4 --&gt;
+&lt;script src="/static/plugins/jQuery/jQuery-2.1.4.min.js"&gt;&lt;/script&gt;
+
+&lt;script src="/static/plugins/jQuery/jquery.validate.js"&gt;&lt;/script&gt;
+&lt;script src="/static/plugins/jQuery/jquery.metadata.js"&gt;&lt;/script&gt;
+&lt;script src="/static/plugins/jQuery/messages_zh.min.js"&gt;&lt;/script&gt;
+&lt;!-- jQuery UI 1.11.4 --&gt;
+&lt;script src="/static/plugins/jQueryUI/jquery-ui.min.js"&gt;&lt;/script&gt;
+&lt;script src="/static/plugins/cookie/jquery.cookie-1.4.1.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/static/plugins/timepicker/bootstrap-datetimepicker.js"/&gt;
+
+
+&lt;!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip --&gt;
+&lt;script&gt;
+    $.widget.bridge('uibutton', $.ui.button);
+&lt;/script&gt;
+&lt;!-- Bootstrap 3.3.5 --&gt;
+&lt;script src="/static/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/static/plugins/timepicker/moment.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="/static/plugins/timepicker/daterangepicker.js"&gt;&lt;/script&gt;
+
+&lt;!-- AdminLTE App --&gt;
+&lt;script src="/static/dist/js/app.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+    var BASE = "";
+    $(function() {
+        $.app.initIndex();
+        var begin = $('#beginDate').val();
+        var end = $('#endDate').val();
+        if(begin==''&amp;&amp;end==''){
+            $('#daterange').daterangepicker({
+                autoUpdateInput:false,
+                locale: {
+                    format: 'YYYY-MM-DD',
+
+                },
+            }, function(start, end, label) {
+                $('#beginDate').val(start.format('YYYY-MM-DD HH:mm:ss'));
+                $('#endDate').val(end.format('YYYY-MM-DD HH:mm:ss'));
+                console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+            });
+        }
+        else{
+            $('#daterange').daterangepicker({
+                startDate: begin,
+                endDate: end,
+                locale: {
+                    format: 'YYYY-MM-DD',
+
+                },
+            }, function(start, end, label) {
+                $('#beginDate').val(start.format('YYYY-MM-DD HH:mm:ss'));
+                $('#endDate').val(end.format('YYYY-MM-DD HH:mm:ss'));
+                console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+            });
+        }
+
+
+
+    });
+&lt;/script&gt;
+&lt;/body&gt;
+
+&lt;script type="text/javascript"&gt;
+
+    function timeclear() {
+        $("#daterange").val('');
+        $("#beginDate").val('');
+        $("#endDate").val('');
+    }
+
+    function searchByQuery(){
+        var page = $("#pageSelect").val();
+        var authorizeScope = $("#wxSelect").val();
+        var openId = $("#game_openid").val();
+        var surveyTurn = $("#surveyTurn").val();
+        var beginDate = $("#beginDate").val();
+        var endDate = $("#endDate").val();
+        var url = "?pn=1&amp;ps="+page+"&amp;authorizeScope="+authorizeScope+"&amp;openId="+openId+"&amp;surveyTurn="+
+                surveyTurn+"&amp;beginDate="+beginDate+"&amp;endDate="+endDate;
+        window.location.href= url;
+    }
+
+    function selectAll() {
+        var xz = $("#selected").prop("checked");//判断全选按钮的选中状态
+        var ck = document.getElementsByName('print');
+        if(xz){
+            for(var i=0; i&lt;ck.length; i++){
+                ck[i].checked=true
+            }
+        }else{
+            for(var i=0; i&lt;ck.length; i++){
+                ck[i].checked=false
+            }
+        }
+    }
+
+    function refresh() {
+        var sceneBody = window.document.getElementById("sceneBody");
+        $.ajax({
+            url:'/crazy/finder/game/statistics',
+            type:'GET',
+            success: function (data) {
+                var gameStatistics = JSON.parse(data);
+                $("#totalPlayTimes").text(gameStatistics.totalPlayTimes);
+                $("#totalDuration").text(gameStatistics.totalDuration);
+                $("#totalPlayers").text(gameStatistics.totalPlayers);
+                $("#aveDuration").text(gameStatistics.aveDuration);
+                $("#gameShareRate").text(gameStatistics.gameShareRate);
+                $("#gameShareAcceptRate").text(gameStatistics.gameShareAcceptRate);
+                $("#userShareRate").text(gameStatistics.userShareRate);
+                $("#userShareAcceptRate").text(gameStatistics.userShareAcceptRate);
+                $("#aveUserShareTimes").text(gameStatistics.aveUserShareTimes);
+
+                var sceneStatistics = gameStatistics.sceneStatisticsDTOList
+                if (sceneStatistics !== null) {
+                    var str = "";
+                    for (i in sceneStatistics) {
+                        str += "&lt;tr class=\"text-center\"&gt;" +
+                                "&lt;th class='text-center' scope=\"row\"&gt;" + sceneStatistics[i].sceneID + "&lt;/th&gt;" +
+                                "&lt;td scope=\"row\"&gt;" + sceneStatistics[i].sceneName + "&lt;/td&gt;" +
+                                "&lt;td scope=\"row\"&gt;" + sceneStatistics[i].totalPlayTimes + "&lt;/td&gt;" +
+                                "&lt;td scope=\"row\"&gt;" + sceneStatistics[i].totalDuration + "&lt;/td&gt;" +
+                                "&lt;td scope=\"row\"&gt;" + sceneStatistics[i].aveDuration + "&lt;/td&gt;" +
+                                "&lt;/tr&gt;"
+                    }
+                    sceneBody.innerHTML = str;
+                }
+            },
+            error: function (data) {
+                alert("error: " + data);
+            }
+        })
+    }
+
+    function exportByIDs() {
+        var obj=document.getElementsByName('print');
+        var ids='';
+        for(var i=0; i&lt;obj.length; i++){
+            if(obj[i].checked) ids+=obj[i].value+'/'; //如果选中，将value添加到变量s中
+        }
+        if(ids==''){
+            alert("请选择要导出的记录");
+            return false;
+        }
+        console.log(ids);
+        var url = "/crazy/finder/part/log/excel?IDs=" + ids;
+        window.location.href= url;
+    }
+
+    function exportAll() {
+        var url = "/crazy/finder/all/log/excel";
+        window.location.href= url;
+    }
+
+    $(document).keyup(function(event){
+        if(event.keyCode ==13){
+            $("#search").click();
+        }
+    });
+
+&lt;/script&gt;
+
+
+8f59a217-863a-41f9-8ade-0aed6a85f8dc
+62d8969b-f908-4693-9de0-9e98d7804d67
+671d4832-b9be-45f6-9dcc-3857f2c2a6a1
+65911a7c-e447-49b1-9384-9443e3c5e8a8
+784902ca-0897-46b6-9e75-34cf29768f06
+d261df19-328c-41fe-ba09-10f1d7f3441a
+148e3a1b-2a8f-400d-a5a4-8dbd8c64912f
+352d549e-0bb6-44c8-992c-6d10c5eaa8bf
+4c22fe40-3cd0-4d3e-aadf-5cc9dde9aec2
+ff8ba207-b2a4-4f45-9888-8d50fd1ffca0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_case2</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
+    <div id='div_pt1_2' class="collapse">  -->
+
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_2'>通过</button>
+    <div id='div_pt1_2' class="collapse in">
+    <pre>
+    
+pt1_2: 8f59a217-863a-41f9-8ade-0aed6a85f8dc
+62d8969b-f908-4693-9de0-9e98d7804d67
+671d4832-b9be-45f6-9dcc-3857f2c2a6a1
+65911a7c-e447-49b1-9384-9443e3c5e8a8
+784902ca-0897-46b6-9e75-34cf29768f06
+d261df19-328c-41fe-ba09-10f1d7f3441a
+148e3a1b-2a8f-400d-a5a4-8dbd8c64912f
+352d549e-0bb6-44c8-992c-6d10c5eaa8bf
+4c22fe40-3cd0-4d3e-aadf-5cc9dde9aec2
+ff8ba207-b2a4-4f45-9888-8d50fd1ffca0
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='total_row' class="text-center active">
+    <td>总计</td>
+    <td>2</td>
+    <td>2</td>
+    <td>0</td>
+    <td>0</td>
+    <td>通过率：100.00%</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
+    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+
+</body>
+</html>
